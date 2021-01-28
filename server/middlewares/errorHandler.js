@@ -13,7 +13,6 @@ module.exports = (err, req, res, next) => {
     } else if (err.name == "SequelizeUniqueConstraintError") {
         res.status(400).json({message: 'email sudah terdaftar'})
     } else {
-        console.log(err)
         res.status(500).json({message: 'internal server error'})
     }
 }

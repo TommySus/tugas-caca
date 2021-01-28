@@ -42,16 +42,23 @@ class MailController {
     static findMail (req, res, next) {
         Mail.findOne({where: {id: req.params.id}, include: User})
         .then(data => {
-            res.status(200).json({
-                id: data.id,
-                kepada: data.kepada,
-                perihal: data.perihal,
-                jenisSurat: data.jenisSurat,
-                namaPenanggungJawab: data.User.name,
-                instansiPenanggungJawab: data.User.divisi,
-                emailPenanggungJawab: data.User.mail,
-                tanggalDiBuat: data.createdAt.toISOString().slice(0,10)
-            })
+            if (data) {
+                res.status(200).json({
+                    id: data.id,
+                    kepada: data.kepada,
+                    perihal: data.perihal,
+                    jenisSurat: data.jenisSurat,
+                    namaPenanggungJawab: data.User.name,
+                    instansiPenanggungJawab: data.User.divisi,
+                    emailPenanggungJawab: data.User.mail,
+                    tanggalDiBuat: data.createdAt.toISOString().slice(0,10)
+                })
+            } else {
+                throw {
+                    status: 404,
+                    message: 'surat dengan nomor tersebut tidak di temukan'
+                }
+            }
         })
         .catch(error => {
             next(error)
