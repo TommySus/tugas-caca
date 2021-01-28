@@ -1,7 +1,7 @@
 const express = require("express")
 const router = express.Router()
 const UserController = require("../controllers/userController")
-const MailController = require("../controllers/MailController")
+const MailController = require("../controllers/mailController")
 const authentication = require("../middlewares/authentication")
 
 
