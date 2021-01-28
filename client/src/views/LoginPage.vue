@@ -19,7 +19,7 @@
                     <button class="shadow-lg" type="submit" id="btn-login">Login</button>
                 </form>
                 <div id="navigation">
-                  <p>dont have an account? <a id="linkTo" @click="toRegister">register</a></p>
+                  <p>belum punya akun? <a id="linkTo" @click="toRegister">register</a></p>
                 </div>
             </div>
         </div>

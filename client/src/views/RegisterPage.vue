@@ -34,7 +34,7 @@
                     <button class="shadow-lg" type="submit" id="btn-register">Register</button>
                 </form>
                 <div id="navigation">
-                  <p>already have an account? <a id="linkTo" @click="toLogin">login</a></p>
+                  <p>sudah punya akun? <a id="linkTo" @click="toLogin">login</a></p>
                 </div>
             </div>
         </div>

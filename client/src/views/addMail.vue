@@ -61,9 +61,10 @@ export default {
   methods: {
     notification (mailData) {
       Swal.fire({
-        title: '<strong>' + mailData.nomorSurat + '</strong><br>',
+        title: '<strong>Surat</strong><br>',
         icon: 'info',
         html:
+          '<p>nomor: <strong>' + mailData.nomorSurat + '</strong></p><br>' +
           '<p>tanggal dibuat: <b>' + mailData.tanggalDiBuat + '</b></p><br>' +
           '<p>jenis surat: <b>' + mailData.jenisSurat + '</b></p><br>' +
           '<p>kepada: <b>' + mailData.kepada + '<b/></p><br>' +
